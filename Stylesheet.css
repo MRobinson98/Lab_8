@@ -1,0 +1,294 @@
+/*Adding in a custom font*/
+@font-face {
+  font-family: "Segoe UI";
+  src: url("resources/Segoe UI.woff");
+}
+
+html * {
+  font-family: "Segoe UI";
+}
+
+/*Removing hyperlink style*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  background-color: #272727;
+  border-radius: 5px;
+  color: #29a19c;
+  border: 0px;
+}
+
+/*
+
+      /*Backup CSS incase the browser does not meet our minimum spec*/
+/*Setting up the header element
+
+
+      Header {
+        height: 300px;
+        Width: 1485px;
+        text-align: center;
+        color: #272727;
+        font-family: "Segoe UI";
+        font-size: 50px;
+        font-weight: bold;
+        background-image: url("resources/HeaderPhoto.jpg");
+        background-size: 1485px 500px;
+      }
+
+      /*Setting up the nav bar
+      Nav {
+        display: inline-block;
+        width: 1485px;
+        height: 100px;
+        padding: 5px;
+        border-radius: 50vw;
+        background-color: #272727;
+        text-align: center;
+        word-spacing: 50px;
+        color: #29a19c;
+        font-family: "Segoe UI";
+        font-size: 25px;
+      }
+
+			Body {
+				background-color: #29a19c;
+			}
+
+      Footer {
+        display: inline-block;
+        width: 1485px;
+        height: 300px;
+        padding: 5px;
+        border-radius: 25px;
+        background-color: #272727;
+        text-align: center;
+        color: #29a19c;
+      }
+
+      img {
+        height: 200px;
+        width: 200px;
+      }
+
+      div.content {
+        color: #272727;
+        font-family: "Segoe UI";
+        font-size: 18px;
+      }
+    }
+		*/
+/*CSS for the minimum spec*/
+@supports (display: grid) {
+  @media screen and (min-width: 800px) {
+
+    /*setting up the grid*/
+    .gridPage {
+      display: grid;
+      min-height: 100%;
+      grid-template-areas: "header "
+        "nav "
+        "body "
+        "footer ";
+      grid-template-columns: 100%;
+      grid-template-rows: auto auto auto auto;
+    }
+
+    div.smallHeader {
+      font-size: 20px;
+    }
+
+    /* 1/1 of grid */
+    header {
+      text-align: center;
+      color: #272727;
+      font-size: 50px;
+      font-weight: bold;
+      display: grid;
+      grid-area: header;
+      background-image: url("Resources/HeaderPhoto.jpg");
+      background-size: cover;
+    }
+
+    nav {
+      text-align: center;
+      color: #29a19c;
+      background-color: #272727;
+      grid-area: nav;
+      border-radius: 15px;
+    }
+
+    body {
+      background-color: #29a19c;
+      grid-area: body;
+    }
+
+    div.content {
+      background-color: #29a19c;
+      grid-area: body;
+      color: #272727;
+    }
+
+    footer {
+      background-color: #272727;
+      grid-area: footer;
+      text-align: center;
+      color: #29a19c;
+      bottom: 0;
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .imgRow img {
+      padding: 2px;
+      width: 100px;
+      height: 100px;
+      max-width: 100%;
+    }
+
+    /*do a flex to line the images up*/
+    .imgRow {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+
+    .reviewButton {
+      background-color: #272727;
+      color: #29a19c;
+      padding: 4vw 4vh;
+      border-radius: 4px;
+      font-size: 3vw;
+      display: inline-block;
+      margin-top: 5vh;
+      margin-bottom: 2.5vh;
+    }
+
+    .reviewStyle {
+      font-size: 2vw;
+      color: #272727;
+      display: none;
+    }
+
+    label {
+      font-size: 3vw;
+    }
+
+    input {
+      width: 30%;
+      padding: 1vh 1vw;
+    }
+
+    input[type='radio'] {
+      transform: scale(3);
+    }
+
+    #radioPrompt {
+      font-size: 3vw;
+    }
+
+    /* These styles define the conent for destinations, pricing and safety*/
+    div.pageConent {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      outline: 10px solid black;
+    }
+
+    div.login {
+      font-weight: bold;
+      text-align: left;
+      font-size: 1vw;
+      width: 20%;
+    }
+
+    img.contentPic {
+      width: 50vw;
+      height: 50vh;
+      float: left;
+      outline: 2px solid black;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .contDesc {
+      grid-area: 1 / 2 / 2 / 3;
+      padding-left: 1vw;
+    }
+
+    .Profile {
+      text-align: center;
+    }
+
+    div.CheckoutWindow {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    div.windowContent {
+      background-color: #29a19c;
+      margin: auto;
+      width: 80%;
+      padding: 2vw;
+    }
+
+    .windowContent h2{
+      text-align: center;
+      font-size: 2vw;
+    }
+
+    .windowContent p{
+      font-size: 1.5vw;
+      font-weight: bold;
+    }
+
+    input[type='checkbox'] {
+      transform: scale(3);
+    }
+
+    .TripItinerary {
+      text-align: center;
+    }
+
+    .Schedule {
+      text-align: center;
+    }
+
+    .Schedule img {
+      width: 70vw;
+      height: 70vh;
+    }
+
+    .uploadReview{
+      text-align: center;
+    }
+
+    .editPricing{
+      text-align: center;
+    }
+
+    .editDestinations{
+      text-align: center;
+    }
+
+  }
+}
+}
