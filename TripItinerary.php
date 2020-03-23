@@ -1,3 +1,13 @@
+<?php session_start(); // persistent HTTP session 	if (!isset($_SESSION['UserName'])){
+		$_SESSION['UserName'] = 'anonymous';
+	}
+
+	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+		$name = $_POST['username'];
+		if (!empty($name)){
+			$_SESSION['UserName'] = $name;
+		}
+	?>
 <!DOCTYPE html>
 
 <HTML lang="en">

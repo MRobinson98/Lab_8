@@ -1,8 +1,11 @@
 <Header>
 <div class="login">
-    <input type="text" placeholder="Enter Email" name="email" required>
-    <input type="text" placeholder="Enter Password" name="pass" required>
+
+
+<form action="login.php" method="post">
     <button type="submit">Login</button>
+  </form>
+
   </div>
 
 
